@@ -18,7 +18,8 @@ defmodule AbsintheTestAppWeb.ConnCase do
   using do
     quote do
       # Import conveniences for testing with connections
-      use Phoenix.ConnTest
+      import Plug.Conn
+      import Phoenix.ConnTes
       import AbsintheTestAppWeb.Router.Helpers
 
       # The default endpoint for testing

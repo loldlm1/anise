@@ -34,10 +34,13 @@ defmodule Anise.SubscriptionCase do
   """
   use ExUnit.CaseTemplate
   alias Absinthe.Phoenix.SubscriptionTest
+  Application.ensure_all_started(:ex_unit)
 
   using(opts) do
     quote do
-      use Phoenix.ConnTest
+      import Plug.Conn
+      import Phoenix.ConnTest
+
       import Phoenix.ChannelTest
       # validates schema and import base absinthe testings functions
       use Absinthe.Phoenix.SubscriptionTest,

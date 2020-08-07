@@ -39,7 +39,9 @@ defmodule AbsintheTestApp.Mixfile do
       {:absinthe_plug, "~> 1.5"},
       {:gettext, "~> 0.11"},
       {:plug_cowboy, "~> 2.3"},
-      {:anise, path: "../"}
+      {:anise, path: "../"},
+      {:jason, "~> 1.2"}
+
     ]
   end
 end

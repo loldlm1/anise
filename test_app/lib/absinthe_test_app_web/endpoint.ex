@@ -23,11 +23,11 @@ defmodule AbsintheTestAppWeb.Endpoint do
 
   plug(Plug.Logger)
 
-  plug(Plug.Parsers,
+    plug Plug.Parsers,
     parsers: [:urlencoded, :multipart, :json],
     pass: ["*/*"],
-    json_decoder: Poison
-  )
+    json_decoder: Phoenix.json_library()
+
 
   plug(Plug.MethodOverride)
   plug(Plug.Head)

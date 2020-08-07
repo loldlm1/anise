@@ -29,7 +29,7 @@ defmodule AbsintheTestApp.SubscriptionTest do
       assert fufilment = expected
     end
 
-    test "sub without fufilment", %{socket: socket, conn: conn} do
+    test "sub without fufilment", %{socket: socket, conn: _conn} do
       assert %{
                payload: %{subscriptionId: sub_id},
                status: :ok

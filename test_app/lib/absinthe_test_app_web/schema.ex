@@ -29,7 +29,7 @@ defmodule AbsintheTestAppWeb.Schema do
 
   subscription do
     field :user_added, :user do
-      config(fn args, _ ->
+      config(fn _args, _ ->
         {:ok, topic: "*"}
       end)
 
