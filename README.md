@@ -9,7 +9,12 @@ Anise is a set of helpers/assertions for Absinthe
 ```elixir
 def deps do
   [
-    {:anise, "~> 0.1.1"}
+       {
+         :anise,
+         git: "https://github.com/r26D/anise", branch: "master",
+         only: [:test, :dev]
+        }
+
   ]
 end
 ```
