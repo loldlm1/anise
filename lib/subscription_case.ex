@@ -38,7 +38,7 @@ defmodule Anise.SubscriptionCase do
   using(opts) do
     quote do
       use Phoenix.ConnTest
-      use Phoenix.ChannelTest
+      import Phoenix.ChannelTest
       # validates schema and import base absinthe testings functions
       use Absinthe.Phoenix.SubscriptionTest,
         schema: Keyword.get(unquote(opts), :schema)
@@ -60,12 +60,12 @@ defmodule Anise.SubscriptionCase do
     end
   end
 
-  use Phoenix.ChannelTest
+  import Phoenix.ChannelTest
 
   @doc false
   def subscribe(socket, subscription_query) do
     ref = SubscriptionTest.push_doc(socket, subscription_query)
-    Phoenix.ChannelTest.assert_reply(ref, :ok, _)
+    assert_reply(ref, :ok, _)
   end
 
   @doc """
