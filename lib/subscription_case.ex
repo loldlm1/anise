@@ -66,8 +66,8 @@ defmodule Anise.SubscriptionCase do
   import Phoenix.ChannelTest
 
   @doc false
-  def subscribe(socket, subscription_query) do
-    ref = SubscriptionTest.push_doc(socket, subscription_query)
+  def subscribe(socket, subscription_query, opts \\ []) do
+    ref = SubscriptionTest.push_doc(socket, subscription_query, opts)
     assert_reply(ref, :ok, _)
   end
 
