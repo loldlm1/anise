@@ -46,12 +46,18 @@ defmodule Anise.SubscriptionCase do
       use Absinthe.Phoenix.SubscriptionTest,
         schema: Keyword.get(unquote(opts), :schema)
 
-      setup do
+      setup setup_options do
+        socket_params =
+          case Keyword.get(unquote(opts), :socket_params) do
+            params when is_function(params) -> params.(setup_options)
+            params -> params
+          end
+
         # connects to socket
         {:ok, socket} =
           Phoenix.ChannelTest.connect(
             Keyword.get(unquote(opts), :socket),
-            Keyword.get(unquote(opts), :socket_params) || %{}
+            socket_params
           )
 
         # Join socket
