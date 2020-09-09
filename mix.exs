@@ -30,7 +30,7 @@ defmodule Anise.MixProject do
     [
       {:credo, "~> 1.3", only: [:dev, :test], runtime: false},
       {:ex_doc, "~> 0.22", only: :dev, runtime: false},
-      {:absinthe_phoenix, "~> 2.0.0"}
+      {:absinthe_phoenix, "~> 1.4.0"}
     ]
   end
 
